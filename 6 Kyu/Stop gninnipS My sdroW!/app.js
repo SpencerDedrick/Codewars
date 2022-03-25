@@ -7,7 +7,8 @@ let test2 = "This is a test";
 let test3 = "This is another test";
 
 //for loop solution
-//time: 856ms
+//Time: 856ms
+
 let spinWords = (string) => {
   //split string into array of words
   let arr = string.split(" ");
