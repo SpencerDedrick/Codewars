@@ -29,6 +29,19 @@ const domainName = (url) => {
   return test.join("");
 };
 
+//string.prototype.replace
+
+const domainName2 = (url) => {
+  //replace all instances of "https://" with an empty string
+  url.url.replace("https://", "");
+  //replace all instances of "http://" with an empty string
+  url.url.replace("http://", "");
+  //replace all instances of "www." with an empty string
+  url.url.replace("www.", "");
+  //split the url string into an array at the next '.' before the top level domain and return the first item of the array
+  return url.split("")[0];
+};
+
 console.log(domainName(url1));
 console.log(domainName(url2));
 console.log(domainName(url3));
