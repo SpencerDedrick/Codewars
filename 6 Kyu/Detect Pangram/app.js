@@ -71,4 +71,4 @@ const isPanagram2 = (string) => {
 
 console.log(isPanagram2(test1));
 console.log(isPanagram2(test2));
->>>>>>> 123fc9c75527e573e8b3773b3ea032698e5550bf
+
