@@ -8,21 +8,25 @@ let test2 = "This is not a pangram.";
 const isPangram = (string) => {
   //if there are less than 26 characters in the string return false
   if (string.length < 26) return false;
-  //convert string to all lowercase
-  return new Set([
-    ...(string
-      .toLowerCase()
-      .split("")
-      .sort()
-      .filter((x) => {
-        if (x.charCodeAt(0) >= 97 && x.charCodeAt(0) <= 122) {
-          return x;
-        }
-      }).length == 26
-      ? true
-      : false),
-  ]);
+  
+  let arr = [...new Set(string.toLowerCase().split('')).filter((x) => {
+    if (x.charCodeAt(0) >= 97 && x.charCodeAt(0) <= 122) {
+      return x;
+    }
+  })];
+  
+  return arr
 };
 
 console.log(isPangram(test1));
 console.log(isPangram(test2));
+
+/* new Set([
+  ...(string
+    .toLowerCase()
+    .split("")
+    .filter((x) => {
+      if (x.charCodeAt(0) >= 97 && x.charCodeAt(0) <= 122) {
+        return x;
+      }
+    })) */
