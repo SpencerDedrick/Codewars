@@ -4,6 +4,34 @@ Given a string, detect whether or not it is a pangram. Return True if it is, Fal
  */
 let test1 = "The quick brown fox jumps over the lazy dog.";
 let test2 = "This is not a pangram.";
+<<<<<<< HEAD
+//a-z 97-122
+const isPangram = (string) => {
+  //if there are less than 26 characters in the string return false
+  if (string.length < 26) return false;
+  
+  let arr = [...new Set(string.toLowerCase().split('')).filter((x) => {
+    if (x.charCodeAt(0) >= 97 && x.charCodeAt(0) <= 122) {
+      return x;
+    }
+  })];
+  
+  return arr
+};
+
+console.log(isPangram(test1));
+console.log(isPangram(test2));
+
+/* new Set([
+  ...(string
+    .toLowerCase()
+    .split("")
+    .filter((x) => {
+      if (x.charCodeAt(0) >= 97 && x.charCodeAt(0) <= 122) {
+        return x;
+      }
+    })) */
+
 
 const isPangram = (string) => {
   //if there are less than 26 characters in the string return false because it would be impossible for it to be a panagram
@@ -43,3 +71,4 @@ const isPanagram2 = (string) => {
 
 console.log(isPanagram2(test1));
 console.log(isPanagram2(test2));
+
