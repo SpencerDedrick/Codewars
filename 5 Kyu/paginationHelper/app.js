@@ -21,9 +21,6 @@ helper.pageIndex(-10); //should == -1
 // returns the number of pages
 
 // TODO: complete this object/class
-
-// The constructor takes in an array of items and a integer indicating how many
-// items fit within a single page
 function PaginationHelper(collection, itemsPerPage) {
   this.collection = collection;
   this.itemsPerPage = itemsPerPage;
@@ -58,24 +55,6 @@ PaginationHelper.prototype.pageIndex = function (itemIndex) {
   if (itemIndex >= this.collection.length || itemIndex < 0) {
     return -1;
   } else {
-    return Math.floor(itemIndex / this.itemsPerPage );
+    return Math.floor(itemIndex / this.itemsPerPage);
   }
 };
-
-var helper = new PaginationHelper(["a", "b", "c", "d", "e", "f"], 4);
-console.log(
-
-//helper.pageCount(), //should == 2
-//helper.itemCount(), //should == 6
-//helper.pageItemCount(0), //should == 4
-//helper.pageItemCount(1), // last page - should == 2
-//helper.pageItemCount(2), // should == -1 since the page is invalid
-//helper.pageIndex(5), //should == 1 (zero based index)
-helper.pageIndex(2), //should == 0
-//.pageIndex(20), //should == -1
-//helper.pageIndex(-10), //should == -1 
-
-
-)
-
-
