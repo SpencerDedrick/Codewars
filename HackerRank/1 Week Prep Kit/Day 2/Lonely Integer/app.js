@@ -41,13 +41,17 @@ function lonelyinteger(a) {
     }
   }
 }
-console.log(
-  lonelyinteger([9, 9, 1, 1, 2, 2, 3, 3, 4, 5, 5, 6, 6, 7, 7, 8, 8, 0, 0])
-);
 
 const useMath = (a) => {
-  let b = new Set(a).reduce((a, b) => {
-    return a + b;
-  });
-  console.log(b);
+  return (
+    [...new Set(a)].reduce((a, b) => {
+      return a + b;
+    }) *
+      2 -
+    a.reduce((a, b) => {
+      return a + b;
+    })
+  );
 };
+
+console.log(useMath([9, 9, 1, 1, 2, 2, 3, 3, 4, 5, 5, 6, 6, 7, 7, 8, 8, 0, 0]));
